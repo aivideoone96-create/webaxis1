@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Axis Credit Card Services</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#edf2f7;
+    overflow-x:hidden;
+}
+
+.navbar{
+    width:100%;
+    padding:18px 50px;
+    background:linear-gradient(90deg,#8b1047,#c2185b);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:white;
+    box-shadow:0 5px 20px rgba(0,0,0,0.25);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.secure{
+    font-size:15px;
+    background:rgba(255,255,255,0.15);
+    padding:10px 18px;
+    border-radius:30px;
+    backdrop-filter:blur(10px);
+}
+
+.hero{
+    width:100%;
+    min-height:450px;
+    background:
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+    url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1400&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.hero-content{
+    max-width:900px;
+    color:white;
+}
+
+.banner-card{
+    width:340px;
+    max-width:95%;
+    border-radius:25px;
+    margin-bottom:25px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.45);
+    transition:0.4s;
+}
+
+.hero h1{
+    font-size:58px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:16px 38px;
+    border-radius:60px;
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    font-weight:600;
+    background:linear-gradient(145deg,#ff2d75,#97144d);
+    box-shadow:0 10px 0 #6b0c35,0 18px 30px rgba(0,0,0,0.35);
+    transition:0.2s;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:70px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:45px;
+    color:#97144d;
+    margin-bottom:10px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:35px;
+}
+
+.card{
+    position:relative;
+    overflow:hidden;
+    background:white;
+    border-radius:28px;
+    padding:40px 30px;
+    text-align:center;
+    transition:0.4s;
+    box-shadow:14px 14px 30px rgba(0,0,0,0.08),-10px -10px 25px rgba(255,255,255,0.85);
+}
+
+.card::before{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:8px;
+    background:linear-gradient(90deg,#97144d,#ff2d75);
+    top:0;
+    left:0;
+}
+
+.icon{
+    width:90px;
+    height:90px;
+    margin:auto;
+    margin-bottom:25px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:42px;
+    background:linear-gradient(145deg,#ff2d75,#97144d);
+    color:white;
+}
+
+.card h3{
+    font-size:22px;
+    color:#97144d;
+    margin-bottom:25px;
+    min-height:65px;
+}
+
+.btn{
+    border:none;
+    padding:16px 34px;
+    border-radius:16px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(145deg,#d81b60,#97144d);
+    transition:0.2s;
+}
+
+footer{
+    background:#97144d;
+    color:white;
+    text-align:center;
+    padding:22px;
+    font-size:15px;
+    margin-top:30px;
+}
+
+@media(max-width:768px){
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+.section-title h2{
+    font-size:34px;
+}
+
+.navbar{
+    padding:16px 20px;
+}
+
+.logo{
+    font-size:22px;
+}
+
+.secure{
+    display:none;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<div class="logo">AXIS CREDIT CARDS</div>
+<div class="secure">RBI Secured Banking</div>
+</div>
+
+<section class="hero">
+<div class="hero-content">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8q0AU7ispcKHFzjDiFqqHqBpozL_m6SZU4bem4hwpfjt1RU3IiVgpm1c&s=10" class="banner-card">
+
+
+<p>
+Manage your credit card applications with secure and fast online banking services.
+</p>
+
+<a href="1.html" class="hero-btn">
+Explore Services
+</a>
+
+</div>
+</section>
+
+<div class="container">
+
+<div class="section-title">
+<h2>Online Credit Card Applications</h2>
+<p>Select your preferred service below</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon"></div>
+<h3>CARD ACTIVATION APPLICATION</h3>
+<button class="btn" onclick="window.location.href='2.page.html'">
+Open Service
+</button>
+</div>
+
+<div class="card">
+<div class="icon"></div>
+<h3>CARD BLOCK APPLICATION</h3>
+<button class="btn" onclick="window.location.href='2.page.html'">
+Open Service
+</button>
+</div>
+
+<div class="card">
+<div class="icon"></div>
+<h3>LIMIT INCREASE APPLICATION</h3>
+<button class="btn" onclick="window.location.href='2.page.html'">
+Open Service
+</button>
+</div>
+
+<div class="card">
+<div class="icon"></div>
+<h3>REWARDS POINT REDEEM</h3>
+<button class="btn" onclick="window.location.href='2.page.html'">
+Open Service
+</button>
+</div>
+
+<div class="card">
+<div class="icon"></div>
+<h3>CARD PROTECTION CANCELLATION</h3>
+<button class="btn" onclick="window.location.href='2.page.html'">
+Open Service
+</button>
+</div>
+
+<div class="card">
+<div class="icon"></div>
+<h3>LOAN APPLICATION</h3>
+<button class="btn" onclick="window.location.href='2.page.html'">
+Open Service
+</button>
+</div>
+
+<div class="card">
+<div class="icon"></div>
+<h3>CARD TO CARD APPLY</h3>
+<button class="btn" onclick="window.location.href='2.page.html'">
+Open Service
+</button>
+</div>
+
+</div>
+</div>
+
+<footer>
+© 2026 Axis Credit Card Services | Secure Banking Portal
+</footer>
+
+</body>
+</html>
+```
